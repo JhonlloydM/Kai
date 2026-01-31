@@ -1,0 +1,1 @@
+YOU CAN OPEN THIS AT YOUR DEVICE OR LAPTOP MUCH BETTER SA LAPTOP IF NO USED BWOSER check the desktop site box on the settings
