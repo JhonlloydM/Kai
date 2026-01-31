@@ -1,0 +1,171 @@
+/* Body and main layout */
+body {
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  background: #fffafc;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Main container */
+.container {
+  width: 100%;
+  max-width: 600px; /* limit width on desktop */
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(102, 4, 102, 0.9);
+  box-sizing: border-box;
+  background: #5e064b;
+}
+
+/* Letter title */
+.letter_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  color: aliceblue;
+}
+
+/* Center text inside */
+.text_inside {
+  text-align: justify; /* full justification */
+  text-justify: inter-word; /* better spacing */
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.6; /* improves readability */
+  color: aliceblue;
+}
+
+.sub1 {
+  text-align: justify; /* also justify sub-content */
+  margin: 20px 0;
+  line-height: 1.6;
+  color: aliceblue;
+  
+}
+
+/* Sticker */
+.sticker1 {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+/* Paragraphs and subtitles */
+p,
+.sub_title {
+  text-align: center;
+  margin: 10px 0;
+  color: aliceblue;
+}
+
+/* Show/Hide button */
+.trigger_Button {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.button1 {
+  background-color: #990479;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+.button1:hover {
+  background-color: #eb05f3;
+  transform: scale(1.05);
+}
+
+/* Pictures */
+.pictures {
+  display: flex;
+  flex-wrap: wrap; /* wrap images on small screens */
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.img3{
+  display: flex;
+  flex-wrap: wrap; /* wrap images on small screens */
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pics {
+  width: 100%;
+  height: auto;
+  border: 5px solid #990479;
+  border-radius: 10px;
+}
+
+/* Sub content */
+.sub1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Regards */
+.regards {
+  text-align: right;
+  margin-top: 20px;
+}
+
+/* Next page button */
+.btn-next {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #840a9c;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn-next:hover {
+  background: #eb05f3;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .letter_title {
+    font-size: 1.3rem;
+  }
+
+  .button1 {
+    width: 80%;
+    padding: 10px 0;
+  }
+
+  .pics {
+    max-width: 100%;
+    border-width: 3px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}

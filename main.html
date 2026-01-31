@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.main.css">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memowies💕</title>
+</head>
+<body>
+    
+<div class="container">
+  <div class="letter"> 
+    <div class="letter_title">Dear: Karen Agrade - Mahal 💕</div>
+<br>
+   <div class="text_inside">
+(Skip this part if you read this already and click "SHOW")
+<br>
+<br>
+     Do you ever think that we will go far along this path? <br>
+          You’re the beautiful surprise that showed up at the most surprising time, <br>
+          masaya akong nakilala kita, masaya at kuntento kapag kasama ka. <br>
+          Palaging mag iingat I will wait for you to come back here again <br>
+          so we can do whatever we want, Alam mo na hehehe <br>
+          Thank you for everthing what you have done to me. <br> 
+          I'm happy and contented sayo 8th months na tayo looking forward and counting. ingat palagi. <br>
+          kunti na lang uuwi kana ulit dito at makakapiling ang isa't-isa <br>
+          I really missing you and I love you so much! 💖 <br>
+     </div>
+          <br>
+          <br>
+          <img class="sticker1" src="Stickers/sticker.gif" alt="Moving Sticker">
+          <br>
+          <p class="sub_title">
+            Do you want to see our first pictures?
+          </p>
+            <br>
+
+          <div class="trigger_Button">
+              <button id="toggleButton"class="button1">Show</button>
+          </div>
+          
+        <div class="pictures">
+          <div class="img1">
+            <img class="pics" id="image1" src="Img/pic4.jpg" style="display: none;" alt="">
+          </div>
+          <div class="img2">
+            <img class="pics" id="image2" src="Img/pic9.jpg" style="display: none;" alt="">
+          </div>
+        </div>
+
+        <div class="sub1" id="content" style="display: none;">
+          I didn't remove this photos to realize when we started.
+          This pictures is our christmas party wave 11 way back then time na nag tra-training tayo <br>
+          marami na rin akong naririnig about na crush mo ako that time, dedma lang ako sa mga sinasabi ng iba <br>
+          since hindi naman ikaw talaga yung nag sasabi sakin no'n in person, At hindi kaagad naniniwala sa sabi-sabi <br>
+          Ang hirap din mag assume kasi... hahaha I was happy this time sa picture since ikaw nakabunot sakin <br>
+          and ngayon na lang ulit ako ngumiti ng ganyan kalaki. Itsura mo dito mukhang kinikilig hahahaha <br>
+          I wish na until the end this is our happy end game. Ayako na din mapunta sa iba and if could be possible <br>
+          I will make you happy, I know naman na you have already spending time sakin and I promise na hindi yon masasayang <br>
+          <br>
+          gusto kong pang gumawa ng maraming memories kasama ka mga bagay na di ko pa nagawa at never ko pang na try <br>
+          Sana bago ka makauwi sa pinas ako din ang unang makakaalam ng pag babalik mo, katulad ng pagpaalam mo nung paalis ka <br>
+          sasalubong sa pag balik mo at unang masisilayan I hope sa mga darating na araw mas lalo pa tayong tumatag maniwala <br>
+          na someday mag kikita ulit tayo sa tamang panahon for now we need to grind and prioritize that we need to be done <br>
+          <br>
+          Na mimiss na kita sobra... yung mga ginagawa natin nakakamiss ulit gawin hahaha..... hihintayin kita sa pag babalik mo mahal <br>
+          sana wag kang mapagod kasi andito lang naman ako handang umalalay kapag mahirap na. Kapag may mga tampuhan sa isat-isa <br>
+          pahupain muna tska natin pag usapan kungsagayon hindi tayo makakagawa ng maling desisyon sa buhay  <br>
+          Palagi tayong mag kakampi sa lahat ng bagay at pag subok na haharapin natin balang araw.. 
+          <br>
+          <br>
+          <br>
+  
+            <div class="img3">
+            <img class="pics" id="image2" src="Img/kaii.jpeg"alt="">
+            <img class="pics" id="image2" src="Img/kai.jpeg">
+          </div>
+
+          Now 2026 andito na tayo sa part na kung saan kilala na natin ang isa't isa at kabidado
+          na natin ang bawat isa.
+              <div class="regards">
+                 ~ JL 
+              </div>
+              
+              <!---Next Page--->
+<a href="34th_birthday.html" class="btn-next">
+  Next page..
+</a>
+
+
+       </div>
+    </div> 
+</div> 
+
+<script>
+
+const image1 = document.getElementById("image1");
+const image2 = document.getElementById("image2");
+const sub1 = document.getElementById("content")
+const button = document.getElementById("toggleButton");
+
+button.addEventListener("click", () => {
+  const areHidden = image1.style.display === "none" && image2.style.display === "none" && sub1.style.display === "none";
+
+  if (areHidden) {
+    image1.style.display = "block";
+    image2.style.display = "block";
+    sub1.style.display = "block";
+    button.textContent = "Hide ";
+  } else {
+    image1.style.display = "none";
+    image2.style.display = "none";
+    sub1.style.display = "none";
+    button.textContent = "Show ";
+  }
+});
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+body {
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center; 
+    background: #5c055f;
+  }
+  .container1{
+    border-radius: 10px;
+    margin: 100px;
+    margin-top: 1%;
+ 
+  }
+  .Text1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 3rem;
+    font-family: 'Courier New', monospace;
+    color: aliceblue;
+    font-weight: bolder;
+  }
+
+  .img1 {
+    display: inline-block;
+    width: 200px;
+  }
+  p{
+    color: aliceblue;
+    font-family: 'Courier New', monospace;
+  }
+.footer_text{
+  color: aliceblue;
+  font-family: 'Courier New', monospace;
+}
+  .img1 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 200px;
+  }
+
+  .option_Button {
+    position: absolute;
+  }
+
+  .option_Button button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #990479;
+    color: white;
+    transition: transform 0.2s, background-color 0.2s;
+    border: rgb(255, 255, 255) solid 1px;
+  }
+
+  .option_Button button:hover {
+    background-color: #ff4757;
+    transform: scale(1.05);
+  }
+
+  .yes-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-family: monospace;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #990479;
+    color: white;
+    transition: transform 0.2s, background-color 0.2s;
+    left: 40%;
+    top: 40%;
+    border: rgb(255, 255, 255) solid 1px;
+  }
+  .yes-button:hover{
+    background-color: #e508ec;
+    transform: scale(1.05);
+  }
+
+  .no-button {
+    font-family: monospace;
+    left: 80%;
+    top: 40%;
+  }

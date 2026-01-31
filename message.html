@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="Img/gift.png" />
+    <title>Birthday Message</title>
+
+    <!-- Embedded old-paper CSS -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: radial-gradient(#5a2a82, #2b0f3a); /* violet theme */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Georgia', serif;
+      }
+
+      .message-container {
+        width: 90%;
+        max-width: 400px;
+        background: linear-gradient(to bottom, #f7e5c9 0%, #e6d4b8 100%);
+        border: 3px solid #d1b894;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        color: #4b2e2e; /* dark brown text */
+        font-family: 'Georgia', serif;
+
+        /* Optional old paper texture */
+        /* background-image: url('paper-texture.png'); */
+        /* background-size: cover; */
+        /* background-blend-mode: lighten; */
+
+        /* Slide-in animation */
+        opacity: 0;
+        transform: translateY(50px);
+        animation: slideUp 1s ease forwards;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes slideUp {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #7a3fa0; /* violet accent */
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 1.5;
+      }
+      /*Floating pics*/
+      .floating-images {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* prevents blocking clicks */
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .floating-images img {
+        position: absolute;
+        width: 90px; /* ~50% size */
+        height: auto;
+        opacity: 0;
+        animation: fadeInOut 4s ease-in-out forwards;
+
+        /* NEW */
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        background: #fff;
+        padding: 4px;
+      }
+
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        25% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        75% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.05);
+        }
+      }
+
+      /* keep message above images */
+      .message-container {
+        position: relative;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="floating-images"></div>
+
+    <div class="message-container">
+      <h1>🎉 Happy 34th Birthday! 🎉</h1>
+      <p>
+        sorry if na busy ako in the past few days dahil busy naman talaga ako sa pag code ko gusto ko sana ma appreciate
+        mo yung mga simple but nice na ganitong gift sana wag kang magsawang mag mahal sakin, di naman ako gagawa ng
+        ikakasawa mo... sarap langz! HAHHAHA.. Gusto ko na masaya ka palagi at goodmood ayaw kong nag aaway tayo.
+        Masyado na tayong matanda para sa mga ganong bagay. Sana pag uwi mo dito makapag decide kana if mag abroad kapa
+        ba o last mo na yan Last mo na talaga yan! djk🤣✌️ Walang araw, oras, minuto at segundo na lumipas na hindi kita
+        na mimiss, Gusto kong malaman mo na sobra kapa sa salitang sapat. Sapat yung mag mamahal mo para manatili akong
+        totoong nag mamahal sayo kasi gusto kong palagi kitang kasama gumising, kumain at matulog ulit. gusto kong
+        kasama ka sa buhay at pag tanda. Mahal na mahal kita, Wishing you all the joy, love, and happiness on your
+        special day. I love you so much😘💜💋
+      </p>
+
+      <audio id="music" src="audio/photographer_(mp3.pm).mp3"></audio>
+    </div>
+
+    <script>
+      const music = document.getElementById('music');
+      music.play();
+
+      const imagePaths = [
+        'Img/Kai/pic1.jpg',
+        'Img/Kai/pic2.jpg',
+        'Img/Kai/pic3.jpg',
+        'Img/Kai/pic4.jpg',
+        'Img/Kai/pic5.jpg',
+        'Img/Kai/pic6.jpg',
+        'Img/Kai/pic7.jpg',
+        'Img/Kai/pic8.jpeg',
+        'Img/Kai/pic9.jpeg',
+        'Img/Kai/pic10.jpeg',
+        'Img/Kai/pic11.jpg',
+        'Img/Kai/pic12.jpg',
+        'Img/Kai/pic13.jpg',
+      ];
+
+      const container = document.querySelector('.floating-images');
+      const messageBox = document.querySelector('.message-container');
+
+      const activeImages = [];
+      const IMG_SIZE = 90; // image width
+      const MIN_DISTANCE = 120; // space between images
+
+      function isOverlapping(x, y) {
+        return activeImages.some(img => {
+          const dx = img.x - x;
+          const dy = img.y - y;
+          return Math.sqrt(dx * dx + dy * dy) < MIN_DISTANCE;
+        });
+      }
+
+      function isInsideMessageBox(x, y) {
+        const box = messageBox.getBoundingClientRect();
+        return x + IMG_SIZE > box.left && x < box.right && y + IMG_SIZE > box.top && y < box.bottom;
+      }
+
+      function getSafePosition() {
+        let x,
+          y,
+          tries = 0;
+
+        do {
+          x = Math.random() * (window.innerWidth - IMG_SIZE);
+          y = Math.random() * (window.innerHeight - IMG_SIZE);
+          tries++;
+        } while (tries < 40 && (isOverlapping(x, y) || isInsideMessageBox(x, y)));
+
+        return { x, y };
+      }
+
+      function showRandomImage() {
+        const pos = getSafePosition();
+        const img = document.createElement('img');
+
+        img.src = imagePaths[Math.floor(Math.random() * imagePaths.length)];
+        img.style.left = pos.x + 'px';
+        img.style.top = pos.y + 'px';
+
+        container.appendChild(img);
+        activeImages.push({ el: img, x: pos.x, y: pos.y });
+
+        setTimeout(() => {
+          img.remove();
+          const index = activeImages.findIndex(i => i.el === img);
+          if (index !== -1) activeImages.splice(index, 1);
+        }, 4000);
+      }
+
+      setInterval(showRandomImage, 1500);
+    </script>
+  </body>
+</html>
